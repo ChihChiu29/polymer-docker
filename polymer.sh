@@ -31,7 +31,6 @@ else
     echo "-------------------------------------------------------------------------------------------"
     echo "The ./external/"$1" directory is mounted under /workspace/external/$1."
     echo "-------------------------------------------------------------------------------------------"
-    echo ${@:1}
     docker run -it -p 8080:8080 -v $(pwd)/external/$1:/workspace/external/$1 "${image_name}" \
         bash -c "cd $1; polymer ${@:2}"
 fi
